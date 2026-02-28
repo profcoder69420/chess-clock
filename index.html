@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chess Clock</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+
+  <body>
+    <!-- CLOCK VIEW -->
+    <div id="clockView" class="view">
+      <div class="clock">
+        <div class="player" id="left">
+          <div class="timer" id="leftTimer">05:00</div>
+        </div>
+
+        <div class="player" id="right">
+          <div class="timer" id="rightTimer">05:00</div>
+        </div>
+
+        <div class="controlsHint">
+          Space = Switch Turn<br />
+          Y = Pause / Resume
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS VIEW -->
+    <div id="settingsView" class="view active">
+      <div class="settings">
+        <h2>Game Paused</h2>
+
+        <label>
+          Left Player Time<br />
+          <input type="number" id="leftMin" min="0" value="5" /> min
+          <input type="number" id="leftSec" min="0" max="59" value="0" /> sec
+        </label>
+
+        <label>
+          Right Player Time<br />
+          <input type="number" id="rightMin" min="0" value="5" /> min
+          <input type="number" id="rightSec" min="0" max="59" value="0" /> sec
+        </label>
+
+        <label>
+          Increment (seconds)<br />
+          <input type="number" id="increment" min="0" value="0" />
+        </label>
+
+        <div class="buttonGroup">
+          <button onclick="applySettings()">Apply Settings</button>
+          <button id="resumeBtn" onclick="resumeGame()" disabled>
+            Resume Game
+          </button>
+        </div>
+
+        <div class="hint">
+          Space = Switch Turn<br />
+          Y = Pause / Resume
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
